@@ -1,0 +1,23 @@
+{
+  "name": "persian-flag-up",
+  "version": "1.0.0",
+  "description": "A useful javascript package for persian web developers",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrlaseptima/persian-flag-up.git"
+  },
+  "keywords": [
+    "persian",
+    "package"
+  ],
+  "author": "Mohamad amin moslemi <mr.laseptima@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mrlaseptima/persian-flag-up/issues"
+  },
+  "homepage": "https://github.com/mrlaseptima/persian-flag-up#readme"
+}
