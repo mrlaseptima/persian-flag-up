@@ -2,22 +2,41 @@
   "name": "persian-flag-up",
   "version": "1.0.0",
   "description": "A useful javascript package for persian web developers",
-  "main": "src/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "main": "dist/persian-flag-up.esm.js",
+  "module": "dist/persian-flag-up.esm.js",
+  "browser": "dist/persian-flag-up.umd.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mrlaseptima/persian-flag-up.git"
   },
   "keywords": [
     "persian",
-    "package"
+    "package",
+    "farsi",
+    "flag",
+    "javascript",
+    "library"
   ],
   "author": "Mohamad amin moslemi <mr.laseptima@gmail.com>",
+  "dependencies": {
+    "ms": "^2.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.1",
+    "@rollup/plugin-node-resolve": "^7.0.0",
+    "rollup": "^1.29.0"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "pretest": "npm run build"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mrlaseptima/persian-flag-up/issues"
   },
-  "homepage": "https://github.com/mrlaseptima/persian-flag-up#readme"
+  "homepage": "https://github.com/mrlaseptima/persian-flag-up#readme",
+  "files": [
+    "dist"
+  ]
 }

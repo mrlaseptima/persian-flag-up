@@ -1,5 +1,50 @@
-import { PERSIAN_NUMBERS, ARABIC_NUMBERS } from "./constants";
-import { detectErrorMessage, isString } from "./utils";
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+const PERSIAN_NUMBERS = [
+    '۰',
+    '۱',
+    '۲',
+    '۳',
+    '۴',
+    '۵',
+    '۶',
+    '۷',
+    '۸',
+    '۹',
+];
+const ARABIC_NUMBERS = [
+    '٠',
+    '١',
+    '٢',
+    '٣',
+    '٤',
+    '٥',
+    '٦',
+    '٧',
+    '٨',
+    '٩',
+];
+
+const pushError = msg => {
+    throw new Error(msg);
+};
+
+const isString = string => (typeof string === "string" || string instanceof String);
+
+const detectErrorMessage = (arg, ...types) => {
+    if (typeof arg === "undefined")
+        pushError(
+            `This method must have at least one input instead of ${typeof arg}`
+        );
+
+    if (!types.includes(typeof arg)) {
+        pushError(
+            `Invalid input type , you cant assign  '${typeof arg}'  to this method`
+        );
+    }
+};
 
 const clear = digits => toEnglishDigits(digits.toString());
 
@@ -24,7 +69,7 @@ const removeZero = number => {
 
 const beautifyData = number => {
 	const cutIndex = hasCountryCode(number) && !hasZero(number) ? -10 : -11;
-	const beautifyResult = `${number.slice(-14, cutIndex)} ${number.slice(cutIndex, -7)} ${number.slice(-7, -4)} ${number.slice(-4)}`
+	const beautifyResult = `${number.slice(-14, cutIndex)} ${number.slice(cutIndex, -7)} ${number.slice(-7, -4)} ${number.slice(-4)}`;
 	return beautifyResult.trim();
 };
 
@@ -47,7 +92,7 @@ const convertArabicNums = str => {
 
 
 
-export const toPersianDigits = (text = "") => {
+const toPersianDigits = (text = "") => {
 	detectErrorMessage(text, "string");
 
 	const nonArabicData = convertArabicNums(text);
@@ -57,14 +102,14 @@ export const toPersianDigits = (text = "") => {
 	);
 };
 
-export const toEnglishDigits = text => {
+const toEnglishDigits = text => {
 	detectErrorMessage(text, "string", "number");
 
 	const charCodeZero = "۰".charCodeAt(0);
 	return text.replace(/[۰-۹]/g, w => w.charCodeAt(0) - charCodeZero);
 };
 
-export const removeArabicChar = (text = "") => {
+const removeArabicChar = (text = "") => {
 	detectErrorMessage(text, "string");
 
 	const clearData = convertArabicNums(text
@@ -74,14 +119,14 @@ export const removeArabicChar = (text = "") => {
 	return clearData;
 };
 
-export const toPersianText = (text = "") => {
+const toPersianText = (text = "") => {
 	detectErrorMessage(text, "string");
 
 	const clearData = removeArabicChar(text);
 	return toPersianDigits(convertArabicNums(clearData));
 };
 
-export const insertCommas = (
+const insertCommas = (
 	digits,
 	options = {
 		toPersian: true,
@@ -97,7 +142,7 @@ export const insertCommas = (
 	return clearData.replace(RegEx, ",");
 };
 
-export const removeCommas = (
+const removeCommas = (
 	digits,
 	options = {
 		toPersian: true,
@@ -112,7 +157,7 @@ export const removeCommas = (
 	return clearData.replace(/\,/g, "");
 };
 
-export const formatPhone = (phoneNumber, options = {
+const formatPhone = (phoneNumber, options = {
 	shouldRemoveCountryCode: false,
 	shouldInsertCountryCode: false,
 	shouldRemoveZero: false,
@@ -137,7 +182,7 @@ export const formatPhone = (phoneNumber, options = {
 	return clearData;
 };
 
-export const formatPrice = (price, options = {
+const formatPrice = (price, options = {
 	toToman: false,
 	toRial: false,
 	shouldInsertCommas: false,
@@ -175,7 +220,7 @@ export const formatPrice = (price, options = {
 };
 
 
-export const isValid = (text = "", options = { allowEmpty: false, type: "alphabet" }) => {
+const isValid = (text = "", options = { allowEmpty: false, type: "alphabet" }) => {
 	detectErrorMessage(text, "string");
 
 	const { allowEmpty = false, type = "alphabet" } = options;
@@ -208,4 +253,13 @@ const PersianFlagUp = {
 	toEnglishDigits: toEnglishDigits,
 };
 
-export default PersianFlagUp;
+exports.default = PersianFlagUp;
+exports.formatPhone = formatPhone;
+exports.formatPrice = formatPrice;
+exports.insertCommas = insertCommas;
+exports.isValid = isValid;
+exports.removeArabicChar = removeArabicChar;
+exports.removeCommas = removeCommas;
+exports.toEnglishDigits = toEnglishDigits;
+exports.toPersianDigits = toPersianDigits;
+exports.toPersianText = toPersianText;
