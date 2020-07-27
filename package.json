@@ -34,7 +34,8 @@
     "dev": "rollup -c -w",
     "pretest": "npm run build",
     "test": "node -v",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "semantic-release": "semantic-release",
+    "publish": "npm publish",
     "commit": "git-cz"
   },
   "license": "MIT",
