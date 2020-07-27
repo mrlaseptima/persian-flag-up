@@ -3,6 +3,7 @@ node_js:
   - "12"
 install:
   - npm i
+  - npm i semantic-release -g
 before_script:
   - npm prune
 after_success:
