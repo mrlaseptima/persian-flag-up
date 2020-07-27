@@ -43,7 +43,8 @@
   },
   "homepage": "https://github.com/mrlaseptima/persian-flag-up#readme",
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "czConfig": {
     "path": "node_modules/cz-conventional-changelog"
