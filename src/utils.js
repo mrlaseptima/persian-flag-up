@@ -4,6 +4,7 @@ export const pushError = msg => {
 
 export const isString = string => (typeof string === "string" || string instanceof String)
 
+
 export const detectErrorMessage = (arg, ...types) => {
     if (typeof arg === "undefined")
         pushError(
