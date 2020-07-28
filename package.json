@@ -1,6 +1,6 @@
 {
   "name": "persian-flag-up",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A useful javascript package for persian web developers",
   "main": "src/index.js",
   "module": "dist/persian-flag-up.esm.js",
