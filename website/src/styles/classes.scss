@@ -1,0 +1,68 @@
+@import "./mixins.scss";
+@import "./variables.scss";
+@import "./placeholders.scss";
+
+.container {
+  padding: 0 50px;
+  max-width: 1800px;
+  width: 100%;
+
+  @include breakpoint(md) {
+    padding: 0 25px;
+  }
+  @include breakpoint(xs) {
+    padding: 0 15px;
+  }
+}
+
+.example {
+  padding: 20px;
+
+  &__title {
+    margin-bottom: 0;
+    font-size: 18px;
+    width: 100%;
+    text-align: right;
+    font-weight: bold;
+    color: $color-secondary;
+  }
+  &__description {
+    margin-top: 0;
+    opacity: 0.6;
+    width: 100%;
+    text-align: right;
+    font-size: 14px;
+  }
+}
+
+.latin.r {
+  font-family: $font-family-latin-r;
+}
+.latin.b {
+  font-family: $font-family-latin-b;
+}
+
+.headingPrimary {
+  @extend %heading-primary;
+}
+.headingSecondary {
+  @extend %heading-secondary;
+}
+
+.heading-2 {
+  @extend %heading-2;
+  font-weight: bolder;
+  &.grouped {
+    margin-bottom: 0;
+  }
+}
+
+.desc-2 {
+  @extend %desc-2;
+  @include breakpoint(xs) {
+    text-align-last: center;
+  }
+  &.grouped {
+    margin-top: 0;
+  }
+}

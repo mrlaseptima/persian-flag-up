@@ -1,0 +1,76 @@
+@import "./../../styles/variables.scss";
+@import "./../../styles/mixins.scss";
+@import "./../../styles/animations.scss";
+
+.header {
+  @include flexbox(center, stretch);
+  height: calc(100vh - 75px);
+  background-color: $color-bg-secondary;
+  box-sizing: content-box;
+  padding-top: 75px;
+  width: 100%;
+
+  a {
+    margin-top: 25px;
+    color: $color-text-light;
+    border-radius: 150px;
+    height: 50px;
+    width: 120px;
+    transition: $time;
+    @include flexbox(center, center);
+    i {
+      margin-right: 5px;
+    }
+
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+
+  svg {
+    position: absolute;
+    bottom: 0;
+    z-index: 4;
+  }
+
+  .container {
+    @include flexbox(center, center, column);
+
+    .fluid {
+      perspective: 40px;
+      @include flexbox(center, center);
+
+      .fluid__content {
+        @include flexbox(center, center, column);
+        background: $color-bg-secondary;
+        transition: transform 0.5s;
+        position: relative;
+        overflow: hidden;
+
+        &:hover {
+          &:after {
+            right: calc(100% + 110px);
+            transition: 1.5s;
+          }
+        }
+
+        img {
+          width: 300px;
+          @include breakpoint(xs) {
+            width: 200px;
+          }
+        }
+
+        @include p-el("after") {
+          background: linear-gradient(to top, $color-gold, transparent);
+          mix-blend-mode: lighten;
+          transform: skew(20deg);
+          transition: 0s;
+          right: -110px;
+          height: 100%;
+          width: 50px;
+        }
+      }
+    }
+  }
+}
