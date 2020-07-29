@@ -36,8 +36,7 @@
     "test": "node -v",
     "semantic-release": "semantic-release",
     "publish": "npm publish",
-    "commit": "git-cz",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+    "commit": "git-cz"
   },
   "license": "MIT",
   "bugs": {
