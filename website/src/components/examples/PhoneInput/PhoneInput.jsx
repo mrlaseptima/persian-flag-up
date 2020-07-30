@@ -1,18 +1,18 @@
-import React, { useState } from "react";
-import "./phoneinput.scss";
-import PersianFlagUp from "../../../persianFlagUp/PersianFlagUp";
+import React, { useState } from "react"
+import "./phoneinput.scss"
+import PersianFlagUp from "../../../../../src/index"
 
 const PhoneInput = () => {
-  const [value, setValue] = useState("09216870717");
-  const [status, setStatus] = useState("valid");
+  const [value, setValue] = useState("09216870717")
+  const [status, setStatus] = useState("valid")
   const checkChar = ({ target }) => {
-    setValue(target.value);
+    setValue(target.value)
     if (
       PersianFlagUp.isValid(target.value, { allowEmpty: false, type: "phone" })
     )
-      setStatus("valid");
-    else setStatus("unValid");
-  };
+      setStatus("valid")
+    else setStatus("unValid")
+  }
 
   return (
     <div className="phone-input example">
@@ -32,7 +32,7 @@ const PhoneInput = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export { PhoneInput };
+export { PhoneInput }

@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import "./factor.scss";
-import PersianFlagUp from "../../../persianFlagUp/PersianFlagUp";
+import React, { useState } from "react"
+import "./factor.scss"
+import PersianFlagUp from "../../../../../src/index"
 
 const Factor = () => {
-  const [value, setValue] = useState(3500);
+  const [value, setValue] = useState(3500)
   const changePrice = e => {
-    if (/^[0-9]*$/.test(e.target.value)) setValue(e.target.value);
-  };
+    if (/^[0-9]*$/.test(e.target.value)) setValue(e.target.value)
+  }
 
   const calcDiscount = val => {
-    return (Number(val) * 80) / 100;
-  };
+    return (Number(val) * 80) / 100
+  }
 
   return (
     <div className="factor example">
@@ -39,7 +39,7 @@ const Factor = () => {
               {PersianFlagUp.formatPrice(value, {
                 suffix: "ریال",
                 toRial: true,
-                shouldInsertCommas: true
+                shouldInsertCommas: true,
               })}
             </del>
           </span>
@@ -48,7 +48,7 @@ const Factor = () => {
             {PersianFlagUp.formatPrice(calcDiscount(value), {
               suffix: "ریال",
               toRial: true,
-              shouldInsertCommas: true
+              shouldInsertCommas: true,
             })}
           </span>
         </div>
@@ -57,6 +57,6 @@ const Factor = () => {
         </div>
       </div>
     </div>
-  );
-};
-export default Factor;
+  )
+}
+export default Factor

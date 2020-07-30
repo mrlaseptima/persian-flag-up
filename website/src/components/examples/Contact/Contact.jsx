@@ -1,6 +1,6 @@
 import React from "react"
 import "./contact.scss"
-import PersianFlagUp from "../../../persianFlagUp/PersianFlagUp"
+import PersianFlagUp from "../../../../../src/index"
 
 const Contact = () => {
   return (

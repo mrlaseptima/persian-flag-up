@@ -1,18 +1,18 @@
-import React, { useState } from "react";
-import "./persianInput.scss";
-import PersianFlagUp from "../../../persianFlagUp/PersianFlagUp";
+import React, { useState } from "react"
+import "./persianInput.scss"
+import PersianFlagUp from "../../../../../src/index"
 
 const PersianInput = () => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState("")
   const checkChar = ({ target }) => {
     if (
       PersianFlagUp.isValid(target.value, {
         allowEmpty: true,
-        type: "alphabet"
+        type: "alphabet",
       })
     )
-      setValue(target.value);
-  };
+      setValue(target.value)
+  }
 
   return (
     <div className="persian-input example">
@@ -30,7 +30,7 @@ const PersianInput = () => {
         />
       </label>
     </div>
-  );
-};
+  )
+}
 
-export { PersianInput };
+export { PersianInput }

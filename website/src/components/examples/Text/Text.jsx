@@ -1,6 +1,6 @@
-import React from "react";
-import PersianFlagUp from "../../../persianFlagUp/PersianFlagUp";
-import "./text.scss";
+import React from "react"
+import PersianFlagUp from "../../../../../src/index"
+import "./text.scss"
 
 const Text = () => {
   return (
@@ -18,7 +18,7 @@ const Text = () => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Text;
+export default Text
