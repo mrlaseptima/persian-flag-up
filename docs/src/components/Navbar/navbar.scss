@@ -1,0 +1,31 @@
+@import "./../../styles/variables.scss";
+@import "./../../styles/mixins.scss";
+@import "./../../styles/placeholders.scss";
+
+nav {
+  @include flexbox(center, stretch);
+  position: absolute;
+  width: 100%;
+
+  .container {
+    height: 75px;
+    @include flexbox(space-between, stretch);
+    @include breakpoint(xs) {
+      @include flexbox(space-evenly, center, column-reverse);
+    }
+
+    .menu {
+      @include flexbox(flex-start, stretch);
+      &__item {
+        @extend %navbar-link;
+        button {
+          all: unset;
+        }
+      }
+    }
+
+    > h1.packageName {
+      @extend %package-name;
+    }
+  }
+}

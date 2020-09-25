@@ -1,0 +1,67 @@
+@import "./../../../styles/mixins.scss";
+@import "./../../../styles/variables.scss";
+
+.contact.example {
+  @include flexbox(center, center, column);
+  perspective: 500px;
+  .card {
+    width: 350px;
+    height: 100px;
+    background: $color-bg-secondary;
+    border-radius: 5px;
+    margin: 2px;
+    padding: 15px;
+    @include flexbox(flex-start, center);
+    transform-style: preserve-3d;
+    transition: 0.3s;
+
+    @include breakpoint(xs) {
+      width: 100%;
+    }
+    &:hover {
+      transform: rotateX(15deg);
+    }
+    img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50px;
+      margin-left: 15px;
+    }
+
+    .info {
+      flex: 1;
+      padding: 15px;
+      @include flexbox(column, flex-start, column);
+      @include breakpoint(xs) {
+        padding: 0;
+      }
+      .tel {
+        direction: ltr;
+        opacity: 0.4;
+        font-size: 14px;
+      }
+    }
+
+    .call-btn {
+      width: 50px;
+      height: 100%;
+      border-radius: 5px;
+      background: darken($color-bg, 10);
+      color: $color-secondary;
+      @include flexbox(center, center);
+      cursor: pointer;
+      transform: translateX(-10px);
+      opacity: 0;
+      transition: 0.3s;
+      @include breakpoint(xs) {
+        display: none;
+      }
+    }
+    &:hover {
+      .call-btn {
+        transform: translateX(0px);
+        opacity: 1;
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+@import "./../../styles/mixins.scss";
+@import "./../../styles/variables.scss";
+
+.popular-examples {
+  @include flexbox(flex-start, center, column);
+  margin-top: 150px;
+
+  > h2 {
+    color: $color-secondary;
+    margin-bottom: 0;
+  }
+  > p {
+    color: $color-secondary;
+    opacity: 0.7;
+    margin-top: 0;
+  }
+  .container {
+    @include flexbox(flex-start, center, column);
+    width: 100%;
+
+    .example-row {
+      margin: 50px 0;
+      width: 100%;
+      @include flexbox(space-evenly, center);
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+      &:first-child {
+        margin-top: 0 !important;
+      }
+      @include breakpoint(lg) {
+        flex-direction: column !important;
+      }
+
+      @include breakpoint(xs) {
+        margin-top: 0;
+      }
+
+      > div {
+        margin: 20px !important;
+        flex: 1 1;
+        padding: 20px;
+      }
+
+      .code {
+        @include breakpoint(lg) {
+          width: 100%;
+          margin-top: 0 !important;
+        }
+
+        @include breakpoint(xs) {
+          padding: 0;
+        }
+      }
+
+      .example-code {
+        direction: ltr;
+        border-radius: 10px;
+        font-size: 14px;
+      }
+      .result {
+        min-width: 40%;
+        min-height: 420px;
+        background: url("/images/example333.svg") no-repeat;
+        background-size: 100% 100%;
+        @include flexbox(center, center);
+        @include breakpoint(lg) {
+          width: 100%;
+          margin-bottom: 0 !important;
+        }
+        @include breakpoint(xs) {
+          padding: 0;
+          min-height: unset;
+          background-image: unset;
+          background-color: $color-primary;
+          border-radius: 15px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@import "./../../../styles/placeholders.scss";
+
+.persian-input {
+  .input {
+    input {
+      @extend %input;
+      @include breakpoint(xs) {
+        width: 100%;
+      }
+    }
+  }
+}

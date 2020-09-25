@@ -1,0 +1,165 @@
+@import "./../../styles/mixins.scss";
+@import "./../../styles/variables.scss";
+
+.intro {
+  padding: 200px 0 250px;
+  @include flexbox(center, stretch);
+  @include breakpoint(lg) {
+    flex-direction: column-reverse;
+  }
+  @include breakpoint(md) {
+    padding: 100px 0 150px;
+  }
+  @include breakpoint(sm) {
+    margin-top: 0;
+    padding: 50px 0;
+  }
+  @include breakpoint(xs) {
+    padding: 50px 0 0;
+  }
+
+  .container {
+    @include flexbox(center, center, column);
+    perspective: 1000px;
+    position: relative;
+    width: 100%;
+  }
+
+  .menu {
+    @include flexbox(space-evenly, flex-start, column);
+    position: absolute;
+    height: 500px;
+    width: 100%;
+    top: 0;
+
+    @include breakpoint(lg) {
+      position: relative;
+    }
+    @include breakpoint(sm) {
+      height: auto;
+    }
+
+    &.active {
+      .row {
+        opacity: 1;
+        transform: rotateY(0deg);
+      }
+    }
+
+    .row {
+      @include flexbox(space-between, flex-start);
+      transform-style: preserve-3d;
+      transform: rotateY(10deg);
+      transition: $time;
+      width: 100%;
+      opacity: 0;
+
+      &:nth-child(1) {
+        padding: 0 100px;
+      }
+      &:nth-child(2) {
+        padding: 0 50px;
+      }
+      &:nth-child(3) {
+        padding: 0 100px;
+      }
+
+      @include breakpoint(lg) {
+        padding: 0 !important;
+      }
+
+      @include breakpoint(sm) {
+        flex-direction: column;
+      }
+
+      .item {
+        @include flexbox(center, center, column);
+        cursor: pointer;
+        width: 300px;
+
+        @include breakpoint(lg) {
+          width: 50%;
+        }
+        @include breakpoint(sm) {
+          width: 100%;
+          margin-top: 25px;
+        }
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        &:hover {
+          h2 {
+            color: $color-gold;
+          }
+          p {
+            color: rgba($color-gold, 0.8);
+          }
+        }
+
+        h2 {
+          font-weight: normal;
+          width: 100%;
+          text-align: center;
+          text-align-last: center;
+        }
+
+        p {
+          width: 70%;
+          text-align: center;
+          text-align-last: center;
+        }
+      }
+
+      &:nth-child(2) {
+        transition-delay: 0.05s;
+      }
+
+      &:nth-child(3) {
+        transition-delay: 0.1s;
+      }
+    }
+  }
+
+  .illustration {
+    @include flexbox(center, center);
+    position: relative;
+    height: 412.15px;
+    width: 500px;
+    @include breakpoint(sm) {
+      transform: scale(0.6);
+    }
+
+    > img {
+      filter: grayscale(100%);
+      position: absolute;
+      transition: 0.3s;
+      opacity: 0.5;
+      width: 100%;
+      right: 0;
+      top: 0;
+    }
+
+    > .colorfull {
+      transition: all 0.5s cubic-bezier(0.1, 0.34, 0.29, 1.52);
+      animation: morph 10s infinite;
+      border-radius: 500px;
+      filter: sepia(30%);
+      position: relative;
+      height: 412.15px;
+      overflow: hidden;
+      cursor: pointer;
+      width: 500px;
+      z-index: 5;
+
+      img {
+        transform: translate(50%, -50%);
+        position: absolute;
+        width: 500px;
+        right: 50%;
+        top: 50%;
+      }
+    }
+  }
+}
