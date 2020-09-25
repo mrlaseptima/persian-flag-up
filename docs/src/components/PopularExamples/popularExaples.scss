@@ -61,7 +61,7 @@
       .result {
         min-width: 40%;
         min-height: 420px;
-        background: url("/images/example333.svg") no-repeat;
+        background: url("../../../public/images/example333.svg") no-repeat;
         background-size: 100% 100%;
         @include flexbox(center, center);
         @include breakpoint(lg) {

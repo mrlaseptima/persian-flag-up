@@ -2,6 +2,10 @@ import React from "react"
 import "./contact.scss"
 import PersianFlagUp from "../../../../../src/index"
 
+import myProfile from "./../../../../public/images/profile1.jpg"
+import hiradsProfile from "./../../../../public/images/profile2.jpg"
+import hoseinsProfile from "./../../../../public/images/profile3.jpg"
+
 const Contact = () => {
   return (
     <div className="contact example">
@@ -10,7 +14,7 @@ const Contact = () => {
         چگونگی نمایش شماره تلفن ها را به راحتی تعیین کنید
       </p>
       <div className="card">
-        <img src={"/images/profile1.jpg"} alt="محمد امین مسلمی" />
+        <img src={myProfile} alt="محمد امین مسلمی" />
         <div className="info">
           <span className="name">محمد امین مسلمی</span>
           <span className="tel">
@@ -26,7 +30,7 @@ const Contact = () => {
         </div>
       </div>
       <div className="card">
-        <img src={"/images/profile2.jpg"} alt="هیراد ارشدی" />
+        <img src={hiradsProfile} alt="هیراد ارشدی" />
         <div className="info">
           <span className="name">هیراد ارشدی</span>
           <span className="tel">
@@ -42,7 +46,7 @@ const Contact = () => {
         </div>
       </div>
       <div className="card">
-        <img src={"/images/profile3.png"} alt="حسین شعبانی" />
+        <img src={hoseinsProfile} alt="حسین شعبانی" />
         <div className="info">
           <span className="name">حسین شعبانی</span>
           <span className="tel">
