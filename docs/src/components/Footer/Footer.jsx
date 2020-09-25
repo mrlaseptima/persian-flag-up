@@ -6,18 +6,21 @@ const Footer = () => {
     <footer>
       <div className="container">
         <div className="social">
-          <a href="">
+          <a href="https://telegram.me/mrlaseptima">
             <i className="icon-send"></i>
           </a>
-          <a href="">
+          <a href="https://twitter.com/mrlaseptima">
             <i className="icon-twitter"></i>
           </a>
         </div>
         <div className="love">
           تـــــــــقــدیــم بــــا ❤️ به فارسی زبان ها
         </div>
-        <a href="" className="github">
-          star on github
+        <a
+          href="https://github.com/mrlaseptima/persian-flag-up"
+          className="github"
+        >
+          visit github
           <i className="icon-github"></i>
         </a>
       </div>

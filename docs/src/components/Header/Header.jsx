@@ -94,7 +94,7 @@ const Header = () => {
               یه پکیج کامل برای هرکی که زیر پرچم ایرانه
             </h2>
 
-            <a href="/">
+            <a href="https://github.com/mrlaseptima/persian-flag-up">
               <span>GithHub</span>
               <i className="icon-github"></i>
             </a>

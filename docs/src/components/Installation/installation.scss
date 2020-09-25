@@ -28,6 +28,8 @@
       }
 
       .box {
+        width: 50%;
+        margin: 0 auto;
         @include flexbox(space-around, flex-start);
         margin-top: 35px;
         background: $color-primary;
@@ -38,6 +40,7 @@
 
         @include breakpoint(md) {
           flex-direction: column;
+          width: 100%;
         }
         @include breakpoint(xs) {
           padding: 20px;
@@ -45,7 +48,6 @@
 
         > div {
           flex: 1;
-          max-width: 40%;
           @include flexbox(center, flex-end, column);
           @include breakpoint(md) {
             max-width: 100%;

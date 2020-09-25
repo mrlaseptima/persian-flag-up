@@ -1,5 +1,5 @@
-import React from "react";
-import "./installation.scss";
+import React from "react"
+import "./installation.scss"
 
 const Installation = () => {
   return (
@@ -30,24 +30,11 @@ const Installation = () => {
                 persian-flag-up
               </code>
             </div>
-
-            <div>
-              <h2 className="latin b">CDN</h2>
-              <p className="desc-2">
-                با جایگذاری لینک زیر در script tag به راحتی از پیکیج استفاده
-                نمایید
-              </p>
-              <code>
-                {
-                  "<script src='http://cdn.com/packages/persian-flag-up.js'></script>"
-                }
-              </code>
-            </div>
           </div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Installation;
+export default Installation
