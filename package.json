@@ -42,7 +42,7 @@
   "bugs": {
     "url": "https://github.com/mrlaseptima/persian-flag-up/issues"
   },
-  "homepage": "https://github.com/mrlaseptima/persian-flag-up#readme",
+  "homepage": "https://github.com/mrlaseptima/persian-flag-up",
   "files": [
     "dist",
     "README.md"
