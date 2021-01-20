@@ -21,7 +21,7 @@
     "gatsby-plugin-sharp": "2.6.36",
     "gatsby-source-filesystem": "2.3.30",
     "gatsby-transformer-sharp": "2.5.15",
-    "gsap": "3.4.2",
+    "gsap": "3.6.0",
     "node-sass": "4.14.1",
     "prismjs": "1.20.0",
     "react": "^16.12.0",
